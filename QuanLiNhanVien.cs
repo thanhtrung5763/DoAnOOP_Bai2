@@ -44,7 +44,7 @@ namespace QuanLyQuanCaPhe
                     }
                     if(chon == 7)
                         Environment.Exit(0);
-                    else {
+                    else if(chon > 0 && chon < 7){
                         string MaNV;
                         Console.WriteLine("Nhap Ma Nhan Vien Can Cap Nhat: ");
                         MaNV = Console.ReadLine();
@@ -89,12 +89,13 @@ namespace QuanLyQuanCaPhe
                                     CapNhat.ViTri(nv, TenBoPhan);
                                     break;
                             default:
-                                    Console.WriteLine("Vui Long Nhap Lai");
                                     break;
                         }
                         Console.WriteLine("Thong Tin Nhan Vien Sau Cap Nhat: ");
                         nv.HienThi();                    
                     }
+                    else 
+                        Console.WriteLine("Vui Long Nhap Lai");
                 }
                 catch(System.FormatException) {
                     Console.WriteLine("Vui Long Nhap Chu So");
@@ -233,7 +234,7 @@ namespace QuanLyQuanCaPhe
                     else if(chon == 2) {
                         QuanLiNhanVien.XoaNhanVien();
                     }
-                    else {
+                    else if(chon > 2 && chon < 5){
                         switch(chon) {
                             case 3:
                                     QuanLiNhanVien.MenuCapNhat();
@@ -242,10 +243,11 @@ namespace QuanLyQuanCaPhe
                                     QuanLiNhanVien.MenuTraCuu();
                                     break;
                             default:
-                                    Console.WriteLine("Vui Long Nhap Lai");
                                     break;
                         }                
                     }
+                    else 
+                        Console.WriteLine("Vui Long Nhap Lai");
                 }
                 catch(System.FormatException) {
                     Console.WriteLine("Vui Long Nhap Chu So");
