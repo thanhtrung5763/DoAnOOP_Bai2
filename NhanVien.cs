@@ -66,7 +66,7 @@ namespace QuanLyQuanCaPhe
             this.ViTri = ViTriMoi;
         }
         public void HienThi() {
-            Console.WriteLine($"{this.MaNV} | {this.HoTen} | {this.GioiTinh} | {this.QueQuan} | {this.NgaySinh.ToString("dd/MM/yyyy")} | {this.NgayVaoLam.ToString("dd/MM/yyyy")} | {this.ViTri.TenBoPhan}");
+            Console.WriteLine($"\t\t\t {this.MaNV, -12} | {this.HoTen, -20} | {this.GioiTinh, -9} | {this.QueQuan, -12} | {this.NgaySinh.ToString("dd/MM/yyyy"), -13} | {this.NgayVaoLam.ToString("dd/MM/yyyy"), -16} | {this.ViTri.TenBoPhan, -7}");
         }
     }
 }

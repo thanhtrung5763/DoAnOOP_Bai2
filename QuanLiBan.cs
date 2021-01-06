@@ -31,15 +31,23 @@ namespace QuanLyQuanCaPhe
             Console.WriteLine("Nhap Ma Ban Muon Cap Nhat: ");
             MaBan = Console.ReadLine();
             Ban ban = QuanLiBan.DSBan.Find(x => x.MaBan == MaBan);
+            if(ban == null) {
+                Console.WriteLine("Ban Khong Co Trong He Thong. Xin Nhap Lai");
+                QuanLiBan.MenuCapNhat();
+            }
             do {
-                Console.WriteLine("---Cap Nhat Thong Tin Ban---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Tinh Trang");
-                Console.WriteLine("2. Suc Chua");
-                Console.WriteLine("3. Thoat");
+                Console.WriteLine("\t\t\t |=============================Cap Nhat Thong Tin Ban=============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                         |\n");
+                Console.WriteLine("\t\t\t |                            1. Tinh Trang                                       |\n");
+                Console.WriteLine("\t\t\t |                            2. Suc Chua                                         |\n");
+                Console.WriteLine("\t\t\t |                            3. Thoat                                            |\n");
+                Console.WriteLine("\t\t\t |====================================CHOOSE======================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
+                    Console.WriteLine("Thong Tin Ban Can Cap Nhat: ");
+                    Console.WriteLine("\t\t\t Ma Ban                          | Tinh Trang                         | Suc Chua");
+                    ban.HienThi();
                     switch(chon) {
                         case 0:
                                 QuanLiBan.MenuQuanLiBan();
@@ -61,8 +69,10 @@ namespace QuanLyQuanCaPhe
                         default:
                                 Console.WriteLine("Vui Long Nhap Lai");
                                 break;
-                    }     
-                           
+                    }
+                    Console.WriteLine("Thong Tin Ban Sau Cap Nhat: ");
+                    Console.WriteLine("\t\t\t Ma Ban                          | Tinh Trang                         | Suc Chua");
+                    ban.HienThi();    
                 }
                 catch(System.FormatException) {
                     Console.WriteLine("Vui Long Nhap Chu So");
@@ -79,15 +89,16 @@ namespace QuanLyQuanCaPhe
         public static void MenuQuanLiBan() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Ban---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Danh Sach Ban");
-                Console.WriteLine("2. Dat ban");
-                Console.WriteLine("3. Them Ban");
-                Console.WriteLine("4. Xoa Ban");
-                Console.WriteLine("5. Cap Nhat Thong Tin Ban");
-                Console.WriteLine("6. Xem Hoa Don");
-                Console.WriteLine("7. Thoat");
+                Console.WriteLine("\t\t\t |=================================Quan Li Ban=================================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                      |\n");
+                Console.WriteLine("\t\t\t |                            1. Danh Sach Ban                                 |\n");
+                Console.WriteLine("\t\t\t |                            2. Dat Ban                                       |\n");
+                Console.WriteLine("\t\t\t |                            3. Them Ban                                      |\n");
+                Console.WriteLine("\t\t\t |                            4. Xoa Ban                                       |\n");
+                Console.WriteLine("\t\t\t |                            5. Cap Nhat Thong Tin Ban                        |\n");
+                Console.WriteLine("\t\t\t |                            6. Xem Hoa Hon                                   |\n");
+                Console.WriteLine("\t\t\t |                            7. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -96,6 +107,9 @@ namespace QuanLyQuanCaPhe
                                 QuanLiQuan.MenuQuanLiQuanCaPhe();
                                 break;
                         case 1:
+                                Console.WriteLine("\t\t\t ---------------------------------Danh Sach Ban---------------------------------\n");
+                                Console.WriteLine("\t\t\t Ma Ban                          | Tinh Trang                         | Suc Chua");
+                                Console.WriteLine("\t\t\t -------------------------------------------------------------------------------");
                                 QuanLiBan.DSBan.ForEach(x => x.HienThi());
                                 break;
                         case 2:
@@ -116,7 +130,7 @@ namespace QuanLyQuanCaPhe
                                 mhd = Console.ReadLine();
                                 HoaDon hd = QuanLiHoaDon.DSHoaDon.Find(x => x.MaHoaDon == mhd);
                                 if( hd != null) {
-                                    Console.WriteLine($"---Hoa Don So {mhd}---");
+                                    Console.WriteLine($"\t\t\t ----------------------------------Hoa Don So {mhd}---------------------------------\n");
                                     hd.HoaDonChoKhach();
                                 }
                                 break;

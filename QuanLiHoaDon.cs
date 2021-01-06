@@ -21,28 +21,39 @@ namespace QuanLyQuanCaPhe
             return s;
         }
         public static void DanhSachHoaDon(List<HoaDon> DanhSachHoaDon) {
-            Console.WriteLine("Ma Hoa Don | Thoi Gian            | Tong Tien");
+            Console.WriteLine("\t\t\t -----------------DANH SACH HOA DON-----------------");
+            Console.WriteLine("\t\t\t Ma Hoa Don    | Thoi Gian             | Tong Tien");
+            Console.WriteLine("\t\t\t ---------------------------------------------------");
             DanhSachHoaDon.ForEach(x => x.ThongTinHoaDon());
         }
         public static void DoanhThuTheoThang(string Thang) {
             List<HoaDon> lHD = QuanLiHoaDon.lHoaDon.FindAll(x => x.ThoiGian.Month.ToString() == Thang);
-            QuanLiHoaDon.DanhSachHoaDon(lHD);
-            Console.WriteLine("---------------------------------------------");
-            Console.WriteLine($"Tong:                               {QuanLiHoaDon.TinhTien(lHD), -9}");
+            if(lHD.Count != 0) {
+                Console.WriteLine($"\t\t\t Doanh Thu Thang {Thang}: ");
+                QuanLiHoaDon.DanhSachHoaDon(lHD);
+                Console.WriteLine("\t\t\t ---------------------------------------------------");
+                Console.WriteLine($"\t\t\t Tong:                                 | {QuanLiHoaDon.TinhTien(lHD), -12}");
+                Console.WriteLine("\t\t\t ---------------------------------------------------");
+            }
+            else
+                Console.WriteLine($"Thang {Thang} Khong Co Doanh Thu");
         }
         public static void TongDoanhThu() {
+            Console.WriteLine($"\t\t\t Doanh Thu Ca Nam: ");
             QuanLiHoaDon.DanhSachHoaDon(QuanLiHoaDon.lHoaDon);
-            Console.WriteLine("---------------------------------------------");
-            Console.WriteLine($"Tong:                               {QuanLiHoaDon.TinhTien(QuanLiHoaDon.lHoaDon), -9}");
+            Console.WriteLine("\t\t\t ---------------------------------------------------");
+            Console.WriteLine($"\t\t\t Tong:                                 | {QuanLiHoaDon.TinhTien(QuanLiHoaDon.lHoaDon), -12}");
+            Console.WriteLine("\t\t\t ---------------------------------------------------");
         }
         public static void MenuDoanhThu() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Doanh Thu---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Theo Thang");
-                Console.WriteLine("2. Tong Doanh Thu");
-                Console.WriteLine("3. Thoat");
+                Console.WriteLine("\t\t\t |==============================Quan Li Doanh Thu==============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                      |\n");
+                Console.WriteLine("\t\t\t |                            1. Theo Thang                                    |\n");
+                Console.WriteLine("\t\t\t |                            2. Tong Doanh Thu                                |\n");
+                Console.WriteLine("\t\t\t |                            3. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -54,11 +65,9 @@ namespace QuanLyQuanCaPhe
                                 string Thang;
                                 Console.WriteLine("Thang Muon Tinh Doanh Thu: ");
                                 Thang = Console.ReadLine();
-                                Console.WriteLine("---Doanh Thu Thang {Thang}---");
                                 QuanLiHoaDon.DoanhThuTheoThang(Thang);
                                 break;
                         case 2:
-                                Console.WriteLine("---Tong Doanh Thu---");
                                 QuanLiHoaDon.TongDoanhThu();
                                 break;
                         case 3:
@@ -78,11 +87,12 @@ namespace QuanLyQuanCaPhe
         public static void MenuQuanLiHoaDon() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Hoa Don---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Danh Sach Hoa Don");
-                Console.WriteLine("2. Doanh Thu");
-                Console.WriteLine("3. Thoat");
+                Console.WriteLine("\t\t\t |===============================Quan Li Hoa Don===============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                      |\n");
+                Console.WriteLine("\t\t\t |                            1. Danh Sach Hoa Don                             |\n");
+                Console.WriteLine("\t\t\t |                            2. Doanh Thu                                     |\n");
+                Console.WriteLine("\t\t\t |                            3. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {

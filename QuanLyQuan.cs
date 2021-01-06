@@ -10,13 +10,14 @@ namespace QuanLyQuanCaPhe
         public static void MenuQuanLiQuanCaPhe() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Quan Ca Phe---");
-                Console.WriteLine("0. Quay Li Nhan Vien");
-                Console.WriteLine("1. Quan Li Ban");
-                Console.WriteLine("2. Quan Li Bo Phan");
-                Console.WriteLine("3. Quan Li Thuc Don");
-                Console.WriteLine("4. Quan Li Hoa Don");
-                Console.WriteLine("5. Thoat");
+                Console.WriteLine("\t\t\t |=============================Quan Li Quan Ca Phe=============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quan Li Nhan Vien                             |\n");
+                Console.WriteLine("\t\t\t |                            1. Quan Li Ban                                   |\n");
+                Console.WriteLine("\t\t\t |                            2. Quan Li Bo Phan                               |\n");
+                Console.WriteLine("\t\t\t |                            3. Quan Li Thuc Don                              |\n");
+                Console.WriteLine("\t\t\t |                            4. Quan Li Hoa Don                               |\n");
+                Console.WriteLine("\t\t\t |                            5. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {

@@ -34,7 +34,7 @@ namespace QuanLyQuanCaPhe
             return td3.Gia;
         }
         public virtual void HienThi() {
-            Console.Write($"{this.Ten} | {this.Gia} | {this.TinhTrang} | {this.ThoiDiemBan}| ");
+            Console.Write($"\t\t\t {this.Ten, -19} | {this.Gia, -8} | {this.TinhTrang, -10} | {this.ThoiDiemBan, -24} | ");
         }
         public virtual void TaoThucDon() {
             Console.WriteLine("Nhap ten thuc an: ");

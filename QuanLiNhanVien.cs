@@ -26,15 +26,16 @@ namespace QuanLyQuanCaPhe
         public static void MenuCapNhat() {
             int chon;
             do {
-                Console.WriteLine("---Cap Nhat Thong Tin Nhan Vien---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Cap Nhat Ho Ten");
-                Console.WriteLine("2. Cap Nhat Gioi Tinh");
-                Console.WriteLine("3. Cap Nhat Que Quan");
-                Console.WriteLine("4. Cap Nhat Ngay Vao Lam");
-                Console.WriteLine("5. Cap Nhat Ngay Sinh");
-                Console.WriteLine("6. Cap Nhat Vi Tri");
-                Console.WriteLine("7. Thoat");
+                Console.WriteLine("\t\t\t |=============================Cap Nhat Thong Tin Nhan Vien=============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                               |\n");
+                Console.WriteLine("\t\t\t |                            1. Cap Nhat Ho Ten                                        |\n");
+                Console.WriteLine("\t\t\t |                            2. Cap Nhat Gioi Tinh                                     |\n");
+                Console.WriteLine("\t\t\t |                            3. Cap Nhat Que Quan                                      |\n");
+                Console.WriteLine("\t\t\t |                            4. Cap Nhat Ngay Vao Lam                                  |\n");
+                Console.WriteLine("\t\t\t |                            5. Cap Nhat Ngay Sinh                                     |\n");
+                Console.WriteLine("\t\t\t |                            6. Cap Nhat Ngay Vi Tri                                   |\n");
+                Console.WriteLine("\t\t\t |                            7. Thoat                                                  |\n");
+                Console.WriteLine("\t\t\t |========================================CHOOSE========================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -54,7 +55,8 @@ namespace QuanLyQuanCaPhe
                             QuanLiNhanVien.MenuQuanLiNhanVien();
                         }
                         else {
-                            Console.WriteLine("Thong Tin Nhan Vien Can Chinh Sua: ");
+                            Console.WriteLine("Thong Tin Nhan Vien Can Cap Nhat: ");
+                            Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                             nv.HienThi();
                         }
                         switch(chon) {
@@ -92,6 +94,7 @@ namespace QuanLyQuanCaPhe
                                     break;
                         }
                         Console.WriteLine("Thong Tin Nhan Vien Sau Cap Nhat: ");
+                        Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                         nv.HienThi();                    
                     }
                     else 
@@ -107,16 +110,17 @@ namespace QuanLyQuanCaPhe
         public static void MenuTraCuu() {
             int chon;
             do {
-                Console.WriteLine("---Tra Cuu Thong Tin Nhan Vien---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Theo Ma Nhan Vien");
-                Console.WriteLine("2. Theo Ten");
-                Console.WriteLine("3. Theo Gioi Tinh");
-                Console.WriteLine("4. Theo Que Quan");
-                Console.WriteLine("5. Theo Nam Vao Lam");
-                Console.WriteLine("6. Theo Nam Sinh");
-                Console.WriteLine("7. Theo Vi Tri");
-                Console.WriteLine("8. Thoat");
+                Console.WriteLine("\t\t\t |=============================Tra Cuu Thong Tin Nhan Vien=============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                              |\n");
+                Console.WriteLine("\t\t\t |                            1. Theo Ma Nhan Vien                                     |\n");
+                Console.WriteLine("\t\t\t |                            2. Theo Ten                                              |\n");
+                Console.WriteLine("\t\t\t |                            3. Theo Gioi Tinh                                        |\n");
+                Console.WriteLine("\t\t\t |                            4. Theo Que Quan                                         |\n");
+                Console.WriteLine("\t\t\t |                            5. Theo Nam Vao Lam                                      |\n");
+                Console.WriteLine("\t\t\t |                            6. Theo Nam Sinh                                         |\n");
+                Console.WriteLine("\t\t\t |                            7. Theo Vi Tri                                           |\n");
+                Console.WriteLine("\t\t\t |                            8. Thoat                                                 |\n");
+                Console.WriteLine("\t\t\t |=======================================CHOOSE========================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -129,8 +133,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Ma Nhan Vien Muon Tra Cuu: ");
                                 string MaNV = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoMaNV(MaNV);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -139,8 +145,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Ten Muon Tra Cuu: ");
                                 string Ten = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoTen(Ten);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -149,8 +157,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Gioi Tinh Muon Tra Cuu: ");
                                 string GioiTinh = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoGioiTinh(GioiTinh);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -159,8 +169,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Que Quan Muon Tra Cuu: ");
                                 string QueQuan = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoQueQuan(QueQuan);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -169,8 +181,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Nam Vao Lam Muon Tra Cuu: ");
                                 string NamVaoLam = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoNamVaoLam(NamVaoLam);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -179,8 +193,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Nam Sinh Muon Tra Cuu: ");
                                 string NamSinh = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoNamSinh(NamSinh);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -189,8 +205,10 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Ten Bo Phan Muon Tra Cuu: ");
                                 string TenBoPhan = Console.ReadLine();
                                 lNhanVien = TraCuu.TheoBoPhan(TenBoPhan);
-                                if(lNhanVien.Count != 0)
+                                if(lNhanVien.Count != 0) {
+                                    Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                     lNhanVien.ForEach(x => x.HienThi());
+                                }
                                 else {
                                     Console.WriteLine("Khong Tim Thay");
                                 }
@@ -212,14 +230,15 @@ namespace QuanLyQuanCaPhe
         public static void MenuQuanLiNhanVien() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Nhan Vien---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Danh Sach Nhan Vien");
-                Console.WriteLine("2. Them Nhan Vien");
-                Console.WriteLine("3. Xoa Nhan Vien");
-                Console.WriteLine("4. Cap Nhat Thong Tin Nhan Vien");
-                Console.WriteLine("5. Tra Cuu Thong Tin Nhan Vien");
-                Console.WriteLine("6. Thoat");
+                Console.WriteLine("\t\t\t |==============================Quan Li Nhan Vien==============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                      |\n");
+                Console.WriteLine("\t\t\t |                            1. Danh Sach Nhan Vien                           |\n");
+                Console.WriteLine("\t\t\t |                            2. Them Nhan Vien                                |\n");
+                Console.WriteLine("\t\t\t |                            3. Xoa Nhan Vien                                 |\n");
+                Console.WriteLine("\t\t\t |                            4. Cap Nhat Thong Tin Nhan Vien                  |\n");
+                Console.WriteLine("\t\t\t |                            5. Tra Cuu Thong Tin Nhan Vien                   |\n");
+                Console.WriteLine("\t\t\t |                            6. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -228,7 +247,8 @@ namespace QuanLyQuanCaPhe
                                 QuanLiQuan.MenuQuanLiQuanCaPhe();
                                 break;
                         case 1:
-                                Console.WriteLine("---DANH SACH NHAN VIEN---");
+                                Console.WriteLine("\t\t\t --------------------------------------------DANH SACH NHAN VIEN--------------------------------------------");
+                                Console.WriteLine("\t\t\t Ma Nhan Vien | Ho Ten               | Gioi Tinh | Que Quan     | Ngay Sinh     | Ngay Vao Lam     | Bo Phan");
                                 QuanLiNhanVien.lNhanVien.ForEach(x => x.HienThi());
                                 break;
                         case 2:

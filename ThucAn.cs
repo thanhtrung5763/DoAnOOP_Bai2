@@ -22,7 +22,7 @@ namespace QuanLyQuanCaPhe
         }
         public override void HienThi() {
             base.HienThi();
-            Console.WriteLine($"{this.Chay}");
+            Console.WriteLine($"{this.Chay, -10}");
         }
     }
 }

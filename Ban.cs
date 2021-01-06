@@ -34,7 +34,7 @@ namespace QuanLyQuanCaPhe
             this.SucChua = SucChua;
         }
         public void HienThi() {
-            Console.WriteLine($"{this.MaBan} | {this.TinhTrang} | {this.SucChua}");
+            Console.WriteLine($"\t\t\t {this.MaBan, -31} | {this.TinhTrang, -34} | {this.SucChua, -8}");
         }
     }
 }

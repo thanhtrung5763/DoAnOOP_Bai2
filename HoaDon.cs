@@ -85,26 +85,26 @@ namespace QuanLyQuanCaPhe
             return s;
         }
         public void HoaDonChoKhach() {
-            Console.WriteLine("---------***----------");
-            Console.WriteLine($"Thu Ngan: {this.NVThuNgan.HoTen}");
-            Console.WriteLine($"Thoi Gian: {this.ThoiDiem} {this.ThoiGian.ToString("dd/MM/yyyy")}");
-            Console.WriteLine("---------***----------");
-            Console.WriteLine("Ten               S/L   Gia       Tong");
-            Console.WriteLine("---------***----------");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
+            Console.WriteLine($"\t\t\t Thu Ngan: {this.NVThuNgan.HoTen}");
+            Console.WriteLine($"\t\t\t Thoi Gian: {this.ThoiDiem} {this.ThoiGian.ToString("dd/MM/yyyy")}");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
+            Console.WriteLine("\t\t\t Ten                                        S/L          Gia              Tong");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
             for(int i = 0; i < this.lMon.Count; i++) {
-                Console.WriteLine($"{this.lMon[i].Ten, -3}               {this.SoLuong[i], -3}   {this.lMon[i].Gia, -3}       {this.SoLuong[i] * this.lMon[i].Gia, -4}");
+                Console.WriteLine($"\t\t\t {this.lMon[i].Ten, -28}               {this.SoLuong[i], -10}   {this.lMon[i].Gia, -10}       {this.SoLuong[i] * this.lMon[i].Gia, -4}");
             }
-            Console.WriteLine("---------***----------");
-            Console.WriteLine($"Tong So Luong Mon: {this.lMon.Count}");
-            Console.WriteLine("---------***----------");
-            Console.WriteLine($"Tong Phai Thanh Toan: {this.TinhTien()}");
-            Console.WriteLine("---------***----------");
-            Console.WriteLine($"Tien Khach Dua: {this.TienKhachDua}");
-            Console.WriteLine("---------***----------");
-            Console.WriteLine($"Tra Lai: {this.TienKhachDua - this.TinhTien()}");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
+            Console.WriteLine($"\t\t\t Tong So Luong Mon: {this.lMon.Count}");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
+            Console.WriteLine($"\t\t\t Tong Phai Thanh Toan: {this.TinhTien()}");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
+            Console.WriteLine($"\t\t\t Tien Khach Dua: {this.TienKhachDua}");
+            Console.WriteLine("\t\t\t --------------------------------------***--------------------------------------");
+            Console.WriteLine($"\t\t\t Tra Lai: {this.TienKhachDua - this.TinhTien()}");
         }
         public void ThongTinHoaDon() {
-            Console.WriteLine($"{this.MaHoaDon, -10} | {this.ThoiDiem, -9} {this.ThoiGian.ToString("dd/MM/yyyy")} | {this.TinhTien(), -9}");
+            Console.WriteLine($"\t\t\t {this.MaHoaDon, -13} | {this.ThoiDiem, -10} {this.ThoiGian.ToString("dd/MM/yyyy"), -10} | {this.TinhTien(), -9}");
         }
     }
 }

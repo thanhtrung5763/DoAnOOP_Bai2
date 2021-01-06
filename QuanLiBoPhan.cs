@@ -13,16 +13,19 @@ namespace QuanLyQuanCaPhe
             set { QuanLiBoPhan.lBoPhan = value; }
         }
         public static void HienThi() {
-            Console.WriteLine("---DANH SACH BO PHAN HIEN CO---");
+            Console.WriteLine("\t\t\t ----------------DANH SACH BO PHAN----------------");
+            Console.WriteLine("\t\t\t Ma Bo Phan                          | Ten Bo Phan");
+            Console.WriteLine("\t\t\t -------------------------------------------------");
             QuanLiBoPhan.lBoPhan.ForEach(x => x.HienThi());
         }
         public static void MenuQuanLiBoPhan() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Bo Phan---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Danh Sach Bo Phan");
-                Console.WriteLine("2. Thoat");
+                Console.WriteLine("\t\t\t |===============================Quan Li Bo Phan===============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                      |\n");
+                Console.WriteLine("\t\t\t |                            1. Danh Sach Bo Phan                             |\n");
+                Console.WriteLine("\t\t\t |                            2. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {

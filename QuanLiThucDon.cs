@@ -50,10 +50,19 @@ namespace QuanLyQuanCaPhe
             QuanLiThucDon.DSThucDon.Remove(tu);
         }
         public static void ThucDon() {
-            Console.WriteLine("---Thuc An---");
+            Console.WriteLine("\t\t\t -----------------------------------THUC DON-----------------------------------\n");
+            Console.WriteLine("\t\t\t Thuc An");
+            Console.WriteLine("\t\t\t ------------------------------------------------------------------------------");
+            Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+            Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
             QuanLiThucDon.DSThucAn.ForEach(x => x.HienThi());
-            Console.WriteLine("---Thuc Uong---");
+            Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
+            Console.WriteLine("\t\t\t Thuc Uong");
+            Console.WriteLine("\t\t\t ------------------------------------------------------------------------------");
+            Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+            Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
             QuanLiThucDon.DSThucUong.ForEach(x => x.HienThi());
+            Console.WriteLine("\t\t\t ------------------------------------------------------------------------------");
         }
         public static List<ThucDon> SapXepThucDon(int flag) {
             List<ThucDon> temp = QuanLiThucDon.DSThucDon;
@@ -94,15 +103,15 @@ namespace QuanLyQuanCaPhe
         public static void MenuQuanLiThucDon() {
             int chon;
             do {
-                Console.WriteLine("---Quan Li Thuc Don---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Thuc Don");
-                Console.WriteLine("2. Them Mon");
-                Console.WriteLine("3. Xoa Mon");
-                Console.WriteLine("4. Sap Xep Tang Dan");
-                Console.WriteLine("5. Sap Xep Giam Dan");
-                Console.WriteLine("6. Tim Kiem Theo Khoang Gia");
-                Console.WriteLine("7. Thoat");
+                Console.WriteLine("\t\t\t |==============================Quan Li Thuc Don===============================|\n");
+                Console.WriteLine("\t\t\t |                            0. Quay Lai                                      |\n");
+                Console.WriteLine("\t\t\t |                            1. Thuc Don                                      |\n");
+                Console.WriteLine("\t\t\t |                            2. Them Mon                                      |\n");
+                Console.WriteLine("\t\t\t |                            3. Xoa Mon                                       |\n");
+                Console.WriteLine("\t\t\t |                            4. Sap Xep                                       |\n");
+                Console.WriteLine("\t\t\t |                            5. Tim Kiem Theo Khoang Gia                      |\n");
+                Console.WriteLine("\t\t\t |                            6. Thoat                                         |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -123,12 +132,9 @@ namespace QuanLyQuanCaPhe
                                 QuanLiThucDon.MenuThuTuSapXep();
                                 break;
                         case 5:
-                                QuanLiThucDon.MenuThuTuSapXep();
-                                break;
-                        case 6:
                                 QuanLiThucDon.MenuTimKiem();
                                 break;
-                        case 7:
+                        case 6:
                                 Environment.Exit(0);
                                 break;    
                         default:
@@ -145,12 +151,14 @@ namespace QuanLyQuanCaPhe
         public static void MenuThem() {
             int chon;
             do {
-                Console.WriteLine("---Them Mon---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Thuc An");
-                Console.WriteLine("2. Thuc Uong");
-                Console.WriteLine("3. Thoat");
+                Console.WriteLine("\t\t\t |===================================Them Mon==================================|\n");
+                Console.WriteLine("\t\t\t |                                 0. Quay Lai                                 |\n");
+                Console.WriteLine("\t\t\t |                                 1. Thuc An                                  |\n");
+                Console.WriteLine("\t\t\t |                                 2. Thuc Uong                                |\n");
+                Console.WriteLine("\t\t\t |                                 3. Thoat                                    |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
+
                 chon = int.Parse(Console.ReadLine());
                 try {
                     switch(chon) {
@@ -180,11 +188,12 @@ namespace QuanLyQuanCaPhe
         public static void MenuXoa() {
             int chon;
             do {
-                Console.WriteLine("---Xoa Mon---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Thuc An");
-                Console.WriteLine("2. Thuc Uong");
-                Console.WriteLine("3. Thoat");
+                Console.WriteLine("\t\t\t |===================================Xoa Mon===================================|\n");
+                Console.WriteLine("\t\t\t |                                 0. Quay Lai                                 |\n");
+                Console.WriteLine("\t\t\t |                                 1. Thuc An                                  |\n");
+                Console.WriteLine("\t\t\t |                                 2. Thuc Uong                                |\n");
+                Console.WriteLine("\t\t\t |                                 3. Thoat                                    |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -215,11 +224,12 @@ namespace QuanLyQuanCaPhe
         public static void MenuThuTuSapXep() {
             int chon;
             do {
-                Console.WriteLine("---Sap Xep---");
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Tang Dan");
-                Console.WriteLine("2. Giam Dan");
-                Console.WriteLine("3. Thoat");
+                Console.WriteLine("\t\t\t |===================================Sap Xep===================================|\n");
+                Console.WriteLine("\t\t\t |                                 0. Quay Lai                                 |\n");
+                Console.WriteLine("\t\t\t |                                 1. Tang Dan                                 |\n");
+                Console.WriteLine("\t\t\t |                                 2. Giam Dan                                 |\n");
+                Console.WriteLine("\t\t\t |                                 3. Thoat                                    |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -251,16 +261,19 @@ namespace QuanLyQuanCaPhe
             int chon;
             do {
                 if(flag == 1) {
-                    Console.WriteLine("---Sap Xep Tang Dan---");
+                    Console.WriteLine("\t\t\t |===============================Sap Xep Tang Dan==============================|\n");
+
                 }
                 else if(flag == 2) {
-                    Console.WriteLine("---Sap Xep Giam Dan---");
+                    Console.WriteLine("\t\t\t |===============================Sap Xep Giam Dan==============================|\n");
+
                 }
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Thuc Don");
-                Console.WriteLine("2. Thuc An");
-                Console.WriteLine("3. Thuc Uong");
-                Console.WriteLine("4. Thoat");
+                Console.WriteLine("\t\t\t |                                 0. Quay Lai                                 |\n");
+                Console.WriteLine("\t\t\t |                                 1. Thuc Don                                 |\n");
+                Console.WriteLine("\t\t\t |                                 2. Thuc An                                  |\n");
+                Console.WriteLine("\t\t\t |                                 3. Thuc Uong                                |\n");
+                Console.WriteLine("\t\t\t |                                 4. Thoat                                    |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -270,17 +283,36 @@ namespace QuanLyQuanCaPhe
                                 break;
                         case 1: 
                                 List<ThucDon> lTD = QuanLiThucDon.SapXepThucDon(flag);
-                                Console.WriteLine("Danh Sach Thuc Don Tang Dan Theo Gia: ");
+                                if(flag == 1) {
+                                    Console.WriteLine("Danh Sach Mon Tang Dan Theo Gia: ");
+                                }
+                                else
+                                    Console.WriteLine("Danh Sach Mon Giam Dan Theo Gia: ");
+
+                                Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+                                Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
                                 lTD.ForEach(x => x.HienThi());
                                 break;
                         case 2:
                                 List<ThucAn> lTA = QuanLiThucDon.SapXepThucAn(flag);
-                                Console.WriteLine("Danh Sach Thuc An Tang Dan Theo Gia: ");
+                                if(flag == 1) {
+                                    Console.WriteLine("Danh Sach Thuc An Tang Dan Theo Gia: ");
+                                }
+                                else
+                                    Console.WriteLine("Danh Sach Thuc An Giam Dan Theo Gia: ");
+                                Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+                                Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
                                 lTA.ForEach(x => x.HienThi());
                                 break;
                         case 3:
                                 List<ThucUong> lTU = QuanLiThucDon.SapXepThucUong(flag);
-                                Console.WriteLine("Danh Sach Thuc Uong Tang Dan Theo Gia: ");
+                                if(flag == 1) {
+                                    Console.WriteLine("Danh Sach Thuc Uong Tang Dan Theo Gia: ");
+                                }
+                                else
+                                    Console.WriteLine("Danh Sach Thuc Uong Giam Dan Theo Gia: ");
+                                Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+                                Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
                                 lTU.ForEach(x => x.HienThi());
                                 break;   
                         case 4:
@@ -300,11 +332,13 @@ namespace QuanLyQuanCaPhe
         public static void MenuTimKiem() {
             int chon, Gia1, Gia2;
             do {
-                Console.WriteLine("0. Quay Lai");
-                Console.WriteLine("1. Thuc Don");
-                Console.WriteLine("2. Thuc An");
-                Console.WriteLine("3. Thuc Uong");
-                Console.WriteLine("4. Thoat");
+                Console.WriteLine("\t\t\t |===================================Tim Kiem==================================|\n");
+                Console.WriteLine("\t\t\t |                                 0. Quay Lai                                 |\n");
+                Console.WriteLine("\t\t\t |                                 1. Thuc Don                                 |\n");
+                Console.WriteLine("\t\t\t |                                 2. Thuc An                                  |\n");
+                Console.WriteLine("\t\t\t |                                 3. Thuc Uong                                |\n");
+                Console.WriteLine("\t\t\t |                                 4. Thoat                                    |\n");
+                Console.WriteLine("\t\t\t |===================================CHOOSE====================================|\n");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
@@ -318,7 +352,14 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Gia 2: ");
                                 Gia2 = int.Parse(Console.ReadLine());
                                 List<ThucDon> lTD = QuanLiThucDon.TimKiemThucDonTheoKhoangGia(Gia1, Gia2);
-                                lTD.ForEach(x => x.HienThi());
+                                if(lTD.Count != 0) {
+                                    Console.WriteLine($"Danh Sach Mon Gia Tu {Gia1} - {Gia2}: ");
+                                    Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+                                    Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
+                                    lTD.ForEach(x => x.HienThi());
+                                }
+                                else
+                                    Console.WriteLine($"Khong Co Mon Nao Trong Khoang {Gia1} - {Gia2}");
                                 break;
                         case 2:
                                 Console.WriteLine("Gia 1: ");
@@ -326,6 +367,14 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Gia 2: ");
                                 Gia2 = int.Parse(Console.ReadLine());
                                 List<ThucAn> lTA = QuanLiThucDon.TimKiemThucAnTheoKhoangGia(Gia1, Gia2);
+                                 if(lTA.Count != 0) {
+                                    Console.WriteLine($"Danh Sach Thuc An Gia Tu {Gia1} - {Gia2}: ");
+                                    Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+                                    Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
+                                    lTA.ForEach(x => x.HienThi());
+                                }
+                                else
+                                    Console.WriteLine($"Khong Co Thuc An Nao Trong Khoang {Gia1} - {Gia2}");
                                 lTA.ForEach(x => x.HienThi());
                                 break;
                         case 3:
@@ -334,6 +383,14 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine("Gia 2: ");
                                 Gia2 = int.Parse(Console.ReadLine());
                                 List<ThucUong> lTU = QuanLiThucDon.TimKiemThucUongTheoKhoangGia(Gia1, Gia2);
+                                 if(lTU.Count != 0) {
+                                    Console.WriteLine($"Danh Sach Thuc Uong Gia Tu {Gia1} - {Gia2}: ");
+                                    Console.WriteLine("\t\t\t Ten Mon             | Gia      | Tinh Trang | Thoi Diem Ban            | Loai");
+                                    Console.WriteLine("\t\t\t ------------------------------------------------------------------------------\n");
+                                    lTU.ForEach(x => x.HienThi());
+                                }
+                                else
+                                    Console.WriteLine($"Khong Co Thuc Uong Nao Trong Khoang {Gia1} - {Gia2}");
                                 lTU.ForEach(x => x.HienThi());
                                 break;   
                         case 4:

@@ -17,7 +17,7 @@ namespace QuanLyQuanCaPhe
         {
         }
         public void HienThi() {
-            Console.WriteLine($"{this.MaBP} | {this.TenBoPhan}");
+            Console.WriteLine($"\t\t\t {this.MaBP, -35} | {this.TenBoPhan, -10}");
         }
     }
 }
