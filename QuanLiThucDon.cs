@@ -108,6 +108,7 @@ namespace QuanLyQuanCaPhe
                 try {
                     switch(chon) {
                         case 0:
+                                QuanLiQuan.MenuQuanLiQuanCaPhe();
                                 break;
                         case 1:
                                 QuanLiThucDon.ThucDon();

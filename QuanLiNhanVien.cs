@@ -39,7 +39,7 @@ namespace QuanLyQuanCaPhe
                 chon = int.Parse(Console.ReadLine());
                 try {
                     if(chon == 0) {
-                        QuanLiNhanVien.CapNhatThongTinNhanVien();
+                        QuanLiNhanVien.MenuQuanLiNhanVien();
                         break;
                     }
                     if(chon == 7)
@@ -51,7 +51,7 @@ namespace QuanLyQuanCaPhe
                         NhanVien nv = QuanLiNhanVien.DSNhanVien.Find(x => x.MaNV == MaNV);
                         if(nv == null) {
                             Console.WriteLine("Nhan Vien Khong Co Trong He Thong");
-                            QuanLiNhanVien.CapNhatThongTinNhanVien();
+                            QuanLiNhanVien.MenuQuanLiNhanVien();
                         }
                         else {
                             Console.WriteLine("Thong Tin Nhan Vien Can Chinh Sua: ");
@@ -123,7 +123,7 @@ namespace QuanLyQuanCaPhe
                     List<NhanVien> lNhanVien;
                     switch(chon) {
                         case 0:
-                                QuanLiNhanVien.CapNhatThongTinNhanVien();
+                                QuanLiNhanVien.MenuQuanLiNhanVien();
                                 break;
                         case 1:
                                 Console.WriteLine("Ma Nhan Vien Muon Tra Cuu: ");
@@ -209,45 +209,47 @@ namespace QuanLyQuanCaPhe
             }
             while(chon != 0 || chon != 8);
         }
-        public static void CapNhatThongTinNhanVien() {
+        public static void MenuQuanLiNhanVien() {
             int chon;
             do {
                 Console.WriteLine("---Quan Li Nhan Vien---");
-                Console.WriteLine("0. Danh Sach Nhan Vien");
-                Console.WriteLine("1. Them Nhan Vien");
-                Console.WriteLine("2. Xoa Nhan Vien");
-                Console.WriteLine("3. Cap Nhat Thong Tin Nhan Vien");
-                Console.WriteLine("4. Tra Cuu Thong Tin Nhan Vien");
-                Console.WriteLine("5. Thoat");
+                Console.WriteLine("0. Quay Lai");
+                Console.WriteLine("1. Danh Sach Nhan Vien");
+                Console.WriteLine("2. Them Nhan Vien");
+                Console.WriteLine("3. Xoa Nhan Vien");
+                Console.WriteLine("4. Cap Nhat Thong Tin Nhan Vien");
+                Console.WriteLine("5. Tra Cuu Thong Tin Nhan Vien");
+                Console.WriteLine("6. Thoat");
                 Console.WriteLine("Ban Chon: ");
                 chon = int.Parse(Console.ReadLine());
                 try {
-                    if(chon == 5)
-                        break;
-                    if(chon == 0) {
-                        Console.WriteLine("---DANH SACH NHAN VIEN---");
-                        QuanLiNhanVien.lNhanVien.ForEach(x => x.HienThi());
-                    }
-                    else if(chon == 1) {
-                        QuanLiNhanVien.ThemNhanVien();
-                    }
-                    else if(chon == 2) {
-                        QuanLiNhanVien.XoaNhanVien();
-                    }
-                    else if(chon > 2 && chon < 5){
-                        switch(chon) {
-                            case 3:
-                                    QuanLiNhanVien.MenuCapNhat();
-                                    break;
-                            case 4:
-                                    QuanLiNhanVien.MenuTraCuu();
-                                    break;
-                            default:
-                                    break;
-                        }                
-                    }
-                    else 
-                        Console.WriteLine("Vui Long Nhap Lai");
+                    switch(chon) {
+                        case 0:
+                                QuanLiQuan.MenuQuanLiQuanCaPhe();
+                                break;
+                        case 1:
+                                Console.WriteLine("---DANH SACH NHAN VIEN---");
+                                QuanLiNhanVien.lNhanVien.ForEach(x => x.HienThi());
+                                break;
+                        case 2:
+                                QuanLiNhanVien.ThemNhanVien();
+                                break;
+                        case 3:
+                                QuanLiNhanVien.XoaNhanVien();
+                                break;
+                        case 4:
+                                QuanLiNhanVien.MenuCapNhat();
+                                break;
+                        case 5:
+                                QuanLiNhanVien.MenuTraCuu();
+                                break;
+                        case 6:
+                                Environment.Exit(0);
+                                break;
+                        default:
+                                Console.WriteLine("Vui Long Nhap Lai");
+                                break;
+                    }                
                 }
                 catch(System.FormatException) {
                     Console.WriteLine("Vui Long Nhap Chu So");
