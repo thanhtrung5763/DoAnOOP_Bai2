@@ -11,7 +11,7 @@ namespace QuanLyQuanCaPhe
             BoPhan bp3 = new BoPhan("Pha Che");
             BoPhan bp4 = new BoPhan("Thu Ngan");
             NhanVien nv1 = new NhanVien("Thanh", "Nam", "DN", "20/09/2020", "12/03/2001", "Phuc Vu");
-            NhanVien nv2 = new NhanVien("Trung", "Nam", "HCM", "21/10/2020", "14/02/200", "Thu Ngan");
+            NhanVien nv2 = new NhanVien("Trung", "Nam", "HCM", "21/10/2020", "14/02/2000", "Thu Ngan");
             NhanVien nv3 = new NhanVien("Tram", "Nu", "HN", "02/03/2020", "17/09/1999", "Thu Ngan");
             NhanVien nv4 = new NhanVien("Hieu", "Nam", "BB", "14/07/2020", "19/11/1990", "Quan Li");
             NhanVien nv5 = new NhanVien("Nhi", "Nu", "BB", "09/01/2020", "21/07/2001", "Pha Che");

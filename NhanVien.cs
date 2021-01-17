@@ -24,8 +24,8 @@ namespace QuanLyQuanCaPhe
             this.HoTen = HoTen;
             this.GioiTinh = GioiTinh;
             this.QueQuan = QueQuan;
-            this.NgayVaoLam = DateTime.Parse(NgayVaoLam);
-            this.NgaySinh = DateTime.Parse(NgaySinh);
+            this.NgayVaoLam = DateTime.ParseExact(NgayVaoLam, "dd/mm/yyyy", null);
+            this.NgaySinh = DateTime.ParseExact(NgaySinh, "dd/mm/yyyy", null);
             this.ViTri = QuanLiBoPhan.DSBoPhan.Find(x => x.TenBoPhan == TenBoPhan);
             QuanLiNhanVien.DSNhanVien.Add(this);
         }
@@ -56,10 +56,10 @@ namespace QuanLyQuanCaPhe
             this.QueQuan = QueQuan;
         }
         public void CapNhatNgayVaoLam(string NgayVaoLam) {
-            this.NgayVaoLam = DateTime.Parse(NgayVaoLam);
+            this.NgayVaoLam = DateTime.ParseExact(NgayVaoLam, "dd/mm/yyyy", null);
         }
         public void CapNhatNgaySinh(string NgaySinh) {
-            this.NgaySinh = DateTime.Parse(NgaySinh);
+            this.NgaySinh = DateTime.ParseExact(NgaySinh, "dd/mm/yyyy", null);
         }
         public void CapNhatViTri(string ViTri) {
             BoPhan ViTriMoi = QuanLiBoPhan.DSBoPhan.Find(x => x.TenBoPhan == ViTri);
